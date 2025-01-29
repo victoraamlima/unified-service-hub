@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
+  basePath: process.env.NEXT_PUBLIC_REPO_NAME,
 };
 
 export default nextConfig;
