@@ -1,6 +1,6 @@
 {
   "name": "unified-service-hub",
-  "version": "0.1.0",
+  "version": "0.1.0 (demonstration)",
   "private": true,
   "scripts": {
     "dev": "next dev",
