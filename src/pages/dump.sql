@@ -50,14 +50,14 @@ create table persons (
     cell_phone varchar(50),
     photo text,
     description text,
-    attachments text[], -- Adicionada a vírgula faltante
+    attachments text[],
     address_id integer references address (id)
 );
 
 create table tickets (
     id serial primary key,
     created_at timestamp default now(),
-    person_id integer references persons (id),
+    -- person_id integer references persons (id),
     type text not null,
     description text not null,
     attachments text[],
@@ -66,7 +66,13 @@ create table tickets (
     collaborators_id integer references collaborators (id),
     users_id integer references users (id),
     updated_at timestamp[],
-    department_id integer references departments (id)
+    department_id integer references departments (id) -- default atendimento
+);
+
+create table ticket_persons (
+    ticket_id integer references tickets (id),
+    person_id integer references persons (id),
+    primary key (ticket_id, person_id)
 );
 
 create table department_users (
