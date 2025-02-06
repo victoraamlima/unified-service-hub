@@ -14,7 +14,7 @@ export default function Login() {
             <label htmlFor="password">Senha:</label>
             <input type="password" id="password" name="password" />
           </div>
-          <Link href="/Dashboard">
+          <Link href="/Dashboard/Dashboard">
             <button className="self-center" type="submit">
               Login
             </button>
