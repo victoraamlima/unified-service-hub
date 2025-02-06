@@ -12,8 +12,6 @@ export default function NewTicket() {
 
   const { persons, setPersons } = useAppContext();
   const { tickets, setTickets } = useAppContext();
-  console.log("🚀 ~ NewTicket ~ tickets:", tickets);
-  console.log("🚀 ~ NewTicket ~ persons:", persons);
 
   // let person: [PersonType] = [
   //   {
