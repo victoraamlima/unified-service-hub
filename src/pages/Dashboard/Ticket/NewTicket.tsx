@@ -64,29 +64,29 @@ export default function NewTicket() {
     });
   };
 
-  const saveTicket = () => {
-    const ticket = {
-      id: tickets.length + 1,
-      created_at: new Date().toISOString(),
-      person_id: selectedPersons[0].id,
-      type: (document.getElementById("type") as HTMLInputElement).value,
-      description: (document.getElementById("description") as HTMLInputElement)
-        .value,
-      attachments: [],
-      status: "",
-      priority: "",
-      collaborators_id: (
-        document.getElementById("collaborator") as HTMLSelectElement
-      ).value,
-      users_id: (document.getElementById("user") as HTMLSelectElement).value,
-      updated_at: [new Date().toISOString()],
-      department_id: 0,
-    };
+  // const saveTicket = () => {
+  //   const ticket = {
+  //     id: tickets.length + 1,
+  //     created_at: new Date().toISOString(),
+  //     person_id: selectedPersons[0].id,
+  //     type: (document.getElementById("type") as HTMLInputElement).value,
+  //     description: (document.getElementById("description") as HTMLInputElement)
+  //       .value,
+  //     attachments: [],
+  //     status: "",
+  //     priority: "",
+  //     collaborators_id: (
+  //       document.getElementById("collaborator") as HTMLSelectElement
+  //     ).value,
+  //     users_id: (document.getElementById("user") as HTMLSelectElement).value,
+  //     updated_at: [new Date().toISOString()],
+  //     department_id: "0",
+  //   };
 
-    savePerson();
+  //   savePerson();
 
-    setTickets([...tickets, ticket]);
-  };
+  //   setTickets([...tickets, ticket]);
+  // };
 
   return (
     <main className="flex">
@@ -180,7 +180,7 @@ export default function NewTicket() {
 
             <button
               onClick={() => {
-                saveTicket();
+                // saveTicket();
                 goToTicketHome();
               }}
               className="button"

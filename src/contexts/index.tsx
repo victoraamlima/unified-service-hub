@@ -1,8 +1,8 @@
-// import { AppContextType } from "@/types/contextsType";
-import { PersonType } from "@/types/personType";
 import { createContext, useContext, useState } from "react";
+import { PersonType } from "@/types/personType";
+import { AppContextType, TicketType, DepartmentType } from "@/types/contextsType";
 
-const AppContext = createContext<unknown>(undefined);
+const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [persons, setPersons] = useState<PersonType[]>([
@@ -26,7 +26,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     },
   ]);
 
-  const [tickets, setTickets] = useState<unknown[]>([
+  const [tickets, setTickets] = useState<TicketType[]>([
     {
       id: 1,
       created_at: "2021-10-10 10:00",
@@ -52,7 +52,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       priority: "Alta",
       collaborators_id: "Celia",
       users_id: "Patricia",
-      updated_at: "2021-10-10 10:00",
+      updated_at: [new Date().toISOString()],
       department_id: "Saúde",
     },
     {
@@ -66,12 +66,12 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       priority: "Alta",
       collaborators_id: "Celia",
       users_id: "Patricia",
-      updated_at: "2021-10-10 10:00",
+      updated_at: [new Date().toISOString()],
       department_id: "Saúde",
-    }
+    },
   ]);
 
-  const [departments, setDepartments] = useState<unknown[]>([
+  const [departments, setDepartments] = useState<DepartmentType[]>([
     {
       id: 1,
       name: "Saúde",
@@ -95,5 +95,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function useAppContext() {
-  return useContext(AppContext);
+  const context = useContext(AppContext);
+  if (!context) {
+    throw new Error("useAppContext must be used within an AppProvider");
+  }
+  return context;
 }
