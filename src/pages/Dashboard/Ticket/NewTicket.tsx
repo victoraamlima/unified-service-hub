@@ -10,7 +10,7 @@ export default function NewTicket() {
   const [showForm, setShowForm] = useState(false);
   const [selectedPersons, setSelectedPersons] = useState<PersonType[]>([]);
 
-  const { persons, setPersons } = useAppContext();
+  const { persons } = useAppContext();
   // const { tickets, setTickets } = useAppContext();
 
   // let person: [PersonType] = [
