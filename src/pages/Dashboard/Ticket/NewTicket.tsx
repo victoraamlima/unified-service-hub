@@ -11,7 +11,7 @@ export default function NewTicket() {
   const [selectedPersons, setSelectedPersons] = useState<PersonType[]>([]);
 
   const { persons, setPersons } = useAppContext();
-  const { tickets, setTickets } = useAppContext();
+  // const { tickets, setTickets } = useAppContext();
 
   // let person: [PersonType] = [
   //   {
@@ -54,15 +54,15 @@ export default function NewTicket() {
     }
   };
 
-  const savePerson = () => {
-    persons.map((p: PersonType) => {
-      if (p.name === selectedPersons[0].name) {
-        return;
-      } else {
-        setPersons([...persons, selectedPersons[0]]);
-      }
-    });
-  };
+  // const savePerson = () => {
+  //   persons.map((p: PersonType) => {
+  //     if (p.name === selectedPersons[0].name) {
+  //       return;
+  //     } else {
+  //       setPersons([...persons, selectedPersons[0]]);
+  //     }
+  //   });
+  // };
 
   // const saveTicket = () => {
   //   const ticket = {
