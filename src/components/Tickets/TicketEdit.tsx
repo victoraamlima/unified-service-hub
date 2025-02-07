@@ -1,7 +1,7 @@
 import { useAppContext } from "@/contexts";
 import TicketCard from "./TicketCard";
 import { useState } from "react";
-import { departmentType } from "@/types/contextsType";
+import { DepartmentType } from "@/types/contextsType";
 
 export default function TicketEdit() {
   const { departments } = useAppContext();
@@ -64,7 +64,7 @@ export default function TicketEdit() {
       <div className="flex-center gap-4">
         <h5 className="text-lg font-semibold">Setor:</h5>
         <select className="input">
-          {departments.map((department: departmentType) => (
+          {departments.map((department: DepartmentType) => (
             <option key={department.id} value={department.name}>
               {department.name}
             </option>
