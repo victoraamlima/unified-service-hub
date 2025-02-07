@@ -16,7 +16,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "noImplicitAny": false // Adicione esta linha para permitir o uso de 'any'
+    "noImplicitAny": true // Adicione esta linha para permitir o uso de 'any'
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "tailwind.config.ts"]

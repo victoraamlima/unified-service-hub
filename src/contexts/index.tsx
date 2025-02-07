@@ -2,7 +2,7 @@
 import { PersonType } from "@/types/personType";
 import { createContext, useContext, useState } from "react";
 
-const AppContext = createContext<any>(undefined);
+const AppContext = createContext<unknown>(undefined);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [persons, setPersons] = useState<PersonType[]>([
@@ -26,7 +26,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     },
   ]);
 
-  const [tickets, setTickets] = useState<any[]>([
+  const [tickets, setTickets] = useState<unknown[]>([
     {
       id: 1,
       created_at: "2021-10-10 10:00",
@@ -71,7 +71,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     }
   ]);
 
-  const [departments, setDepartments] = useState<any[]>([
+  const [departments, setDepartments] = useState<unknown[]>([
     {
       id: 1,
       name: "Saúde",
