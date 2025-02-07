@@ -35,7 +35,7 @@ export default function NewTicket() {
   // ];
 
   const handleAddPersonClick = () => {
-    showForm ? setShowForm(false) : setShowForm(true);
+    setShowForm(!showForm);
   };
 
   const router = useRouter();

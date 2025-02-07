@@ -1,11 +1,11 @@
-import { AppContextType } from "@/types/contextsType";
+// import { AppContextType } from "@/types/contextsType";
 import { PersonType } from "@/types/personType";
 import { createContext, useContext, useState } from "react";
 
 const AppContext = createContext<any>(undefined);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
-  let [persons, setPersons] = useState<PersonType[]>([
+  const [persons, setPersons] = useState<PersonType[]>([
     {
       id: 1,
       name: "João da Silva",
@@ -26,7 +26,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     },
   ]);
 
-  let [tickets, setTickets] = useState<any[]>([
+  const [tickets, setTickets] = useState<any[]>([
     {
       id: 1,
       created_at: "2021-10-10 10:00",
@@ -71,7 +71,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     }
   ]);
 
-  let [departments, setDepartments] = useState<any[]>([
+  const [departments, setDepartments] = useState<any[]>([
     {
       id: 1,
       name: "Saúde",

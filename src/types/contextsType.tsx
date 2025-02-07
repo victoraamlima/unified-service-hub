@@ -5,4 +5,9 @@ interface AppContextType {
   setPersons: (person: PersonType[]) => void;
 }
 
-export type { AppContextType };
+interface departmentType {
+  id: number;
+  name: string;
+}
+
+export type { AppContextType, departmentType };

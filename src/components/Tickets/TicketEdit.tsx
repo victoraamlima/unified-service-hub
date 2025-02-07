@@ -1,33 +1,34 @@
 import { useAppContext } from "@/contexts";
 import TicketCard from "./TicketCard";
 import { useState } from "react";
+import { departmentType } from "@/types/contextsType";
 
 export default function TicketEdit() {
   const { departments } = useAppContext();
   const [status, setStatus] = useState("open");
 
-  const saveTicket = () => {
-    const description = (
-      document.getElementById("description") as HTMLTextAreaElement
-    )?.value;
-    const attachmentDescription = (
-      document.getElementById("attachment-description") as HTMLInputElement
-    )?.value;
-    const status = (
-      document.getElementById("status-ticket") as HTMLSelectElement
-    )?.value;
-    const resolved = (
-      document.querySelector(
-        'input[name="resolved"]:checked'
-      ) as HTMLInputElement
-    )?.value;
-    const scheduleDate = (
-      document.querySelector('input[type="date"]') as HTMLInputElement
-    )?.value;
-    const scheduleTime = (
-      document.querySelector('input[type="time"]') as HTMLInputElement
-    )?.value;
-  }; 
+  // const saveTicket = () => {
+  //   const description = (
+  //     document.getElementById("description") as HTMLTextAreaElement
+  //   )?.value;
+  //   const attachmentDescription = (
+  //     document.getElementById("attachment-description") as HTMLInputElement
+  //   )?.value;
+  //   const status = (
+  //     document.getElementById("status-ticket") as HTMLSelectElement
+  //   )?.value;
+  //   const resolved = (
+  //     document.querySelector(
+  //       'input[name="resolved"]:checked'
+  //     ) as HTMLInputElement
+  //   )?.value;
+  //   const scheduleDate = (
+  //     document.querySelector('input[type="date"]') as HTMLInputElement
+  //   )?.value;
+  //   const scheduleTime = (
+  //     document.querySelector('input[type="time"]') as HTMLInputElement
+  //   )?.value;
+  // }; 
 
   return (
     <div className="flex flex-col gap-4 bg-slate-100 p-2 rounded-lg">
@@ -63,7 +64,7 @@ export default function TicketEdit() {
       <div className="flex-center gap-4">
         <h5 className="text-lg font-semibold">Setor:</h5>
         <select className="input">
-          {departments.map((department: any) => (
+          {departments.map((department: departmentType) => (
             <option key={department.id} value={department.name}>
               {department.name}
             </option>
