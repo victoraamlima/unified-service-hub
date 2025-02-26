@@ -17,6 +17,18 @@ create table departments (
     name text not null
 );
 
+INSERT INTO departments (name) VALUES 
+('Atendimento'),
+('COHAB'),
+('Financeiro'),
+('RH'),
+('Logística'),
+('Saúde'),
+('Compras'),
+('Jurídico'),
+('Administrativo'),
+('Outros');
+
 create table users (
     id serial primary key,
     name text not null,
@@ -25,8 +37,12 @@ create table users (
     department_id integer references departments (id),
     permission varchar(50) default '0',
     cell_phone varchar(50) not null,
-    photo text
+    photo text 
 );
+
+INSERT INTO users (name, email, password, department_id, permission, cell_phone) VALUES 
+('Admin', 'admin@gmail', 'admin', 11, '1', '999999999'),
+('User', 'user@gmail', 'user', 1, '0', '999999999');
 
 create table collaborators (
     id serial primary key,
