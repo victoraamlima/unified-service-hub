@@ -1,6 +1,10 @@
 import { createContext, useContext, useState } from "react";
 import { PersonType } from "@/types/personType";
-import { AppContextType, TicketType, DepartmentType } from "@/types/contextsType";
+import {
+  AppContextType,
+  TicketType,
+  DepartmentType,
+} from "@/types/contextsType";
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
@@ -78,6 +82,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     },
   ]);
 
+  const [menuStatus, setMenuStatus] = useState<string>("open");
+
   return (
     <AppContext.Provider
       value={{
@@ -87,6 +93,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         setTickets,
         departments,
         setDepartments,
+        menuStatus,
+        setMenuStatus,
       }}
     >
       {children}
