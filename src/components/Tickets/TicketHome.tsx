@@ -2,7 +2,7 @@ import Header from "@/components/Dashboard/Header";
 import TicketCards from "@/components/Tickets/TicketCards";
 import Link from "next/link";
 
-export default function Ticket() {
+export default function TicketHome() {
   return (
     <main className="flex">
       <Header />
