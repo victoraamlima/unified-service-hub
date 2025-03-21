@@ -37,8 +37,8 @@ export default function ButtonMenu({ data }: ButtonMenuProps) {
       href={`/Dashboard/${route}`}
       type="button"
       className={`flex items-center justify-start relative
-         ${isActive && "my-2"}
-         ${isClose ? "gap-1 my-0" : "gap-3"}
+         ${isActive && !isClose && "my-2"}
+         ${isClose ? "gap-1" : "gap-3"}
           `}
       onClick={() => setMenuStatus({ status: menuStatus.status, select: name })}
     >
