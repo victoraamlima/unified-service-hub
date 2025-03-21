@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Menu from "../Menu/Menu";
+import Menu from "../Menu/HeaderMenu";
 import { getBaseUrl } from "@/utils/getBaseUrl";
 import { useAppContext } from "@/contexts";
 

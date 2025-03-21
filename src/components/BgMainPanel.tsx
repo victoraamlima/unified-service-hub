@@ -1,6 +1,7 @@
 import { getBaseUrl } from "@/utils/getBaseUrl";
 import Image from "next/image";
 import { ReactNode } from "react";
+import FloatingMenu from "./Menu/FloatingMenu";
 
 interface BgMainPanelProps {
   children: ReactNode;
@@ -21,6 +22,8 @@ export default function BgMainPanel({ children }: BgMainPanelProps) {
             />
           </div>
         </div>
+
+        <FloatingMenu />
 
         {children}
       </div>

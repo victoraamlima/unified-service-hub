@@ -1,5 +1,5 @@
 import iconsSvg from "@/json/iconsSvg.json";
-import ButtonMenu from "./ButtonsMenu";
+import ButtonMenu from "./HeaderButtonsMenu";
 import { useState } from "react";
 import { useAppContext } from "@/contexts";
 
