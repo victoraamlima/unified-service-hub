@@ -5,7 +5,6 @@ import { useAppDesignContext } from "@/contexts/design";
 import { getBaseUrl } from "@/utils/getBaseUrl";
 import Image from "next/image";
 import Link from "next/link";
-// import img from "";
 
 export default function Login() {
   const { themeObject } = useAppDesignContext();
@@ -16,7 +15,7 @@ export default function Login() {
       style={{ fontFamily: "helvetica" }}
     >
       <section className="flex-center w-full h-full flex-col gap-8 p-3">
-        <div className="absolute -z-10 h-1/2 bg-blue5 rounded-xl bg-slate-700 flex-center top-3 w-[98%] max-2sm:h-[98 %] max-2sm:top-2 ">
+        <div className="absolute -z-10 h-1/2 bg-blue5 rounded-xl flex-center top-3 w-[98%] max-2sm:h-[98 %] max-2sm:top-2 ">
           <div className="relative w-full h-full overflow-hidden max-2sm:opacity-60">
             <Image
               src={getBaseUrl("/assets/images/pattern.png")}
