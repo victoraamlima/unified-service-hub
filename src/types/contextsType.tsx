@@ -27,6 +27,11 @@ export type AppContextType = {
   setTickets: (tickets: TicketType[]) => void;
   departments: DepartmentType[];
   setDepartments: (departments: DepartmentType[]) => void;
-  menuStatus: string;
-  setMenuStatus: React.Dispatch<React.SetStateAction<string>>;
+  menuStatus: MenuStatusType;
+  setMenuStatus: (menuStatus: MenuStatusType) => void;
+};
+
+export type MenuStatusType = {
+  status: string;
+  select: string;
 };

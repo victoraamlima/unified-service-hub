@@ -8,10 +8,11 @@ export default function Header() {
 
   return (
     <header
-      className={`relative flex items-center flex-col gap-4
-        ${menuStatus === "open" ? "p-3 pt-6" : "p-4 pt-6 pr-7"}`}
+      className={`relative flex items-start flex-col gap-4 pt-3 transition-all ${
+        menuStatus.status === "close" ? "p-3 pr-0" : "pl-3"
+      }`}
     >
-      <div className="flex items-center gap-2">
+      <div className={`flex items-center gap-2`}>
         <Image
           src={getBaseUrl("/assets/images/BRASAO-ALEPA-2.png")}
           width={3762}
@@ -20,18 +21,26 @@ export default function Header() {
           className="w-10"
         />
 
-        {menuStatus === "close" && (
-          <h2 className="text-xl text-blue3 font-bold w-28 whitespace-nowrap">
-            Zeca Pirão
-          </h2>
-        )}
+        <h2
+          className={`text-xl text-blue3 font-bold whitespace-nowrap transition-all overflow-hidden ${
+            menuStatus.status === "close" ? "w-0" : "w-36"
+          }`}
+        >
+          Zeca Pirão
+        </h2>
       </div>
 
       <button
-        className={`absolute top-1 right-2 transition-all ${
-          menuStatus === "close" && "transform rotate-180"
+        className={`absolute top-12 z-10 -right-6 transition-all bg-white2 p-1 rounded-md ${
+          menuStatus.status === "close" && "transform rotate-180"
         }`}
-        onClick={() => setMenuStatus(menuStatus === "open" ? "close" : "open")}
+        onClick={() =>
+          setMenuStatus(
+            menuStatus.status === "open"
+              ? { status: "close", select: menuStatus.select }
+              : { status: "open", select: menuStatus.select }
+          )
+        }
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,9 +50,9 @@ export default function Header() {
         >
           <path
             stroke="#545759"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1.25"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.25"
             d="M13.25 2.5v12M10.25 8.5h-7.5M7.125 5.375 10.25 8.5l-3.125 3.125"
           />
         </svg>

@@ -4,6 +4,7 @@ import {
   AppContextType,
   TicketType,
   DepartmentType,
+  MenuStatusType,
 } from "@/types/contextsType";
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -82,7 +83,10 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     },
   ]);
 
-  const [menuStatus, setMenuStatus] = useState<string>("open");
+  const [menuStatus, setMenuStatus] = useState<MenuStatusType>({
+    status: "open",
+    select: "Home",
+  });
 
   return (
     <AppContext.Provider
