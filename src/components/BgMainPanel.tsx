@@ -10,7 +10,7 @@ interface BgMainPanelProps {
 export default function BgMainPanel({ children }: BgMainPanelProps) {
   return (
     <section className="w-full h-full p-3">
-      <div className="relative bg-blue5 rounded-xl flex-center w-full h-full -z-30">
+      <div className="relative bg-blue5 rounded-xl flex-center w-full h-full">
         <div className="absolute w-full h-full -z-20">
           <div className="relative w-full h-full">
             <Image
