@@ -1,18 +1,16 @@
-import { useAppDesignContext } from "@/contexts/design";
-
 interface LabelInputProps {
   label: string;
   type: string;
   placeHolder?: string;
 }
 
-export default function LabelForm({
+export default function LabelInputForm({
   label,
   type,
   placeHolder,
 }: LabelInputProps) {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 font-medium">
       <label htmlFor={label} className="text-sm ml-1">
         {label}
       </label>
