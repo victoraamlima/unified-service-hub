@@ -1,5 +1,5 @@
 import { useAppContext } from "@/contexts";
-import TicketCard from "./TicketCard";
+import TicketCard from "./Card/TicketCard";
 import { useState } from "react";
 import { DepartmentType } from "@/types/contextsType";
 
