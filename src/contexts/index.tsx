@@ -13,7 +13,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [persons, setPersons] = useState<PersonType[]>([
     {
       id: 1,
-      name: "João da Silva",
+      name: "João da Silva Santos de Souza",
       email: "testuser@example.com",
       cpf: "123.456.789-00",
       birth_date: "2000-01-01",
