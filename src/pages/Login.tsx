@@ -1,6 +1,6 @@
 import Button from "@/components/Button/Button";
 import Form from "@/components/Form/Form";
-import LabelInput from "@/components/Form/LabelInput";
+import LabelInputForm from "@/components/Form/LabelInputForm";
 import { useAppDesignContext } from "@/contexts/design";
 import { getBaseUrl } from "@/utils/getBaseUrl";
 import Image from "next/image";
@@ -48,13 +48,13 @@ export default function Login() {
         </div>
 
         <Form>
-          <LabelInput
+          <LabelInputForm
             label="Usuário"
             type="user"
             placeHolder="Digite o nome do usuário"
           />
 
-          <LabelInput
+          <LabelInputForm
             label="Senha"
             type="password"
             placeHolder="Digite sua senha"
@@ -66,6 +66,7 @@ export default function Login() {
               name="entrar"
               type="submit"
               width="w-full"
+              style="style-1"
             />
           </Link>
         </Form>
